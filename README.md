@@ -1,6 +1,4 @@
-# EconoLivros
-
-#*Ainda em estágio inicial!*
+# EconoLivros (V. pré-alfa)
 
 Projeto realizado para um trabalho da matéria de Banco de Daos I da Graduação em Sistemas de Informação
 
