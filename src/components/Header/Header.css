@@ -1,3 +1,4 @@
+
 .header {
     background-color: #131543;
     position: fixed;
@@ -9,15 +10,14 @@
 
 .header>div {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-
+    padding: 0 100px;
+    
 }
 .logo {
-    width: 150px;
-    height: 50px;
+    width: 100px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,6 @@
     height: auto; /* Mantém a proporção da imagem */
 }
 
-
 @media(max-width:600px) {
     .logo {
         margin-top: 15px;
@@ -38,8 +37,12 @@
     }
     .header {
         position: fixed;
-        width: 100%;
         padding: 10px;
         z-index: 2;
+    }
+    .header>div{
+        width: 100%;
+        padding: 0 1px;
+
     }
 }

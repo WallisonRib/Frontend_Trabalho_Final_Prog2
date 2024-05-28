@@ -3,11 +3,13 @@ import logo from '../../imgs/logo.png'
 
 import './Header.css';
 import { Link } from 'react-router-dom';
+
+
 function Header() {
 
     return (
         <header className="header">
-            <div className="container">
+            <div class="container">
                 <Link to="/" >
                     <div class="logo">
                         <img src={logo} alt="Logo"/>
@@ -15,6 +17,8 @@ function Header() {
                 </Link>
 
                 <SearchBar />
+
+
             </div>
         </header>
     );
