@@ -1,9 +1,36 @@
-*{
+/* Home.css */
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% da altura da viewport */
     background-color: #131543;
-    z-index: 3;
 }
 
+.login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
 
-h1{
-    font-size: large;
+.logoHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem; /* Espaçamento inferior opcional */
+}
+
+.logoHome img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }

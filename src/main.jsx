@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
 
         <Route element={<App />}>
-          <Route path="/" element={<Products />} />
+          <Route path="/" element={<Home />} />
           <Route path="item/:id" element={<Item />} />
           <Route path="search" element={<Search />} />
           
