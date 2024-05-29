@@ -1,11 +1,15 @@
 /* Home.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
 .home-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* 100% da altura da viewport */
+    height: 100vh;
     background-color: #131543;
+    color: white;
+
 }
 
 .login-box {
@@ -24,9 +28,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: auto;
-    margin-bottom: 1rem; /* Espaçamento inferior opcional */
 }
 
 .logoHome img {
@@ -34,3 +37,18 @@
     height: auto;
     display: block;
 }
+.slogan {
+    text-align: center; /* Centraliza o texto */
+    font-family: 'Roboto', sans-serif; /* Altere a fonte conforme necessário */
+    font-size: 1.2em; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #FFFF; /* Cor do texto */
+    margin: 20px auto; /* Espaçamento externo */
+    max-width: 600px; /* Largura máxima do contêiner */
+  }
+  
+  .slogan p {
+    margin: 0; 
+    line-height: 1.0; 
+    padding: 10px 0; 
+  }
+  
