@@ -9,12 +9,6 @@ import { Link } from 'react-router-dom';
 function Card({ data, showLink = true }) {
 
     const { title, thumbnail, price } = data;
-    const { cartItems, setCartItems } = useContext(AppContext);
-
-        const handleAddCart = () => {
-            setCartItems([...cartItems, data]);
-        };
-
     return (
         <section className="Card">
 
@@ -34,14 +28,7 @@ function Card({ data, showLink = true }) {
 
             </div>
             </Link>
-            <button
-                type='button'
-                className='card_button'
-                onClick={handleAddCart}
-            >
-                <BsFillCartPlusFill />
-                </button>
-         
+
         </section >  
     );
 
