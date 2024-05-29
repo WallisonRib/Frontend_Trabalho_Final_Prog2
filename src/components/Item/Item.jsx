@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 function Item() {
     const { id } = useParams();
     const [itemData, setItemData] = useState(null);
-    const { carregando, setLoading, setCartItems, cartItems } = useContext(AppContext);
+    const { carregando, setLoading } = useContext(AppContext);
 
     useEffect(() => {
         fetchItem(id).then((response) => {
@@ -22,10 +22,6 @@ function Item() {
     while (itemData === null) {
         return <Loading />
     }
-
-    const handleAddCart = () => {
-        setCartItems([...cartItems, itemData]);
-    };
 
     const { condition, sold_quantity, title, original_price, price, pictures } = itemData;
 
@@ -67,7 +63,6 @@ function Item() {
                         <input className="addcart"
                             type="button"
                             value="ADICIONAR AO CARRINHO"
-                            onClick={handleAddCart}
 
                         />
                     </div>
