@@ -16,11 +16,12 @@ function Products() {
         });
     }, []);
 
+
     return (
         (carregando ? <Loading /> :
             <section className="products container">
                 {
-                    products.map((product) => <Card key={product.id} data={product}/>)
+                    products.map((isbn) => <Card key={product.id} data={product}/>)
                 }
             </section>
         )

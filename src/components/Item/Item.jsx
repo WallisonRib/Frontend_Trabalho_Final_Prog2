@@ -4,67 +4,44 @@ import fetchItem from "../../api/fetchItem";
 import "./Item.css"
 import Loading from "../Loading/Loading";
 import AppContext from '../../context/AppContext';
-import { Swiper, SwiperSlide } from "swiper/react"
 
 function Item() {
-    const { id } = useParams();
+    const { isbn } = useParams();
     const [itemData, setItemData] = useState(null);
     const { carregando, setLoading } = useContext(AppContext);
 
     useEffect(() => {
-        fetchItem(id).then((response) => {
+        fetchItem(isbn).then((response) => {
             setLoading(true);
             setItemData(response);
             setLoading(false);
         });
-    }, [id]);
+    }, [isbn]);
 
     while (itemData === null) {
         return <Loading />
     }
 
-    const { condition, sold_quantity, title, original_price, price, pictures } = itemData;
+    const { nome, preco, title, descricao, autor, foto } = itemData;
 
     return (
         (carregando ? <Loading /> :
             <div className="wrap">
                 <div className="container item">
 
-                    <div className="imagem">
-                        <Swiper
-                            slidesPerView={1}
-                            pagination={{ clickable: false }}
-                            normalizeSlideIndex = { true }
-                            navigation
-                        >
-                            {pictures.map((item) => (
-                                <SwiperSlide key={item.id}>
-                                    <img
-                                        src={item.url}
-                                        alt="Slider"
-                                        className="slide-item"
-                                    />
-                                </SwiperSlide>
-                            ))}
-
-                        </Swiper>
-                    </div>
+                <img src={foto}
+                alt="product"
+                className='Card_image'
+            />
 
                     <div className="item-description">
-                        <div className="priceandsold">
-                            {condition === "new" ? <p className="condition">Novo</p> : <p className="condition">Usado</p>} {sold_quantity > 0 && <p className="sold_quantity"> | +{sold_quantity} vendidos</p>}
-                        </div>
-                        <h2>{title}</h2>
+
+                        <h2>{nome}</h2>
                         <div className="price">
-                            {original_price != null && <h2 className="pricepromo"><s>{original_price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</s></h2>}
 
-                            <h2 className="pricecurrency">{price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h2>
+                            <h2 className="pricecurrency">{preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h2>
                         </div>
-                        <input className="addcart"
-                            type="button"
-                            value="ADICIONAR AO CARRINHO"
 
-                        />
                     </div>
 
                 </div>

@@ -15,11 +15,12 @@ function SearchBar() {
         setLoading(true);
         const products = await fetchProducts(searchValue);
         setProducts(products);
+        console.log(products);
         setLoading(false);
         navigate(`/search?q=${searchValue}`, { replace: true });
         setSearchValue('');
     };
-
+    
     return (
         <form className='search-bar' onSubmit={handleSearch}>
             <input

@@ -8,23 +8,22 @@ import { Link } from 'react-router-dom';
 
 function Card({ data, showLink = true }) {
 
-    const { title, thumbnail, price } = data;
+    const { nome, foto, preco, autor } = data;
     return (
         <section className="Card">
 
-        <Link className='link' to={`/item/${data.id}`}>  
+        <Link className='link' to={`/item/${data.isbn}`}>  
         
-            <img src={thumbnail.replace(/\w\.jpg/gi, "W.jpg")}
+            <img src={foto}
                 alt="product"
                 className='Card_image'
             />
 
             <div className="card_info">
-                <h2 className="card_price">{price.toLocaleString('pt-br', {
+                <h2 className="card_price">R$ {preco.toLocaleString('pt-br', {
                     style: 'currency',
                     currency: 'BRL'
-                })}</h2>
-                <h2 className="card_title">{title}</h2>
+                })}</h2>                <h2 className="card_title">{nome}</h2>
 
             </div>
             </Link>

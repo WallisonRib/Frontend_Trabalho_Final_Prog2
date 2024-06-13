@@ -13,7 +13,7 @@ function Search() {
         (carregando ? <Loading /> :
             <section className="products container">
                 {
-                    products.map((product) => <Card key={product.id} data={product}/>)
+                    products.map((product) => <Card key={product.isbn} data={product}/>)
                 }
             </section>
         )

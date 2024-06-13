@@ -6,10 +6,11 @@ import Provider from "./context/Provider";
 function App() {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const isLogin = location.pathname === '/login';
 
   return (
     <Provider>
-      {!isHome && <Header />}
+      {!isHome && !isLogin && <Header />}
       <Outlet />
     </Provider>
   );

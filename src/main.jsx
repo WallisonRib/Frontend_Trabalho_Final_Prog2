@@ -7,9 +7,8 @@ import './index.css'
 
 import {BrowserRouter, Routes, Route } from "react-router-dom"
 import Item from './components/Item/Item.jsx'
-import Products from './components/Products/Products.jsx'
 import Search from './components/Search/Search.jsx'
-
+import Login from './components/Login/Login.jsx'
 
 import {register} from "swiper/element/bundle"
 register();
@@ -29,7 +28,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
         <Route element={<App />}>
           <Route path="/" element={<Home />} />
-          <Route path="item/:id" element={<Item />} />
+          <Route path="login" element={<Login  />} />
+          <Route path="item/:isbn" element={<Item />} />
           <Route path="search" element={<Search />} />
           
         </Route>

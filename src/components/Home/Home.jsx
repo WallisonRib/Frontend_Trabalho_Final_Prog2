@@ -2,6 +2,8 @@ import React from 'react';
 import './Home.css';
 import logo from '../../imgs/logo.png'
 import fraseHome from '../../imgs/logo.png'
+import { Link } from 'react-router-dom';
+
 
 import SearchBar from '../SearchBar/SearchBar';
 
@@ -9,8 +11,8 @@ import SearchBar from '../SearchBar/SearchBar';
 const Home = () => {
     return (
         <div className="home-container">
-            <div className="login-box">
-                
+            <div className="home-box">
+
                 <div class="logoHome">
                     <img src={logo} alt="Logo" />
                 </div>
@@ -21,6 +23,14 @@ const Home = () => {
 
                 <SearchBar />
             </div>
+
+            <Link to={`/login`}>
+
+                <button class="btn_login">
+                    <p>Fazer login</p>
+                </button>
+
+            </Link>
 
         </div>
     );
