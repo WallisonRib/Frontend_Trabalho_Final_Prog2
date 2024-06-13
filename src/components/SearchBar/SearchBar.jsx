@@ -13,7 +13,9 @@ function SearchBar() {
     const handleSearch = async (event) => {
         event.preventDefault();
         setLoading(true);
-        const products = await fetchProducts(searchValue);
+        const products = await fetchProducts(searchValue, {
+            mode: 'no-cors'
+          });
         setProducts(products);
         console.log(products);
         setLoading(false);
