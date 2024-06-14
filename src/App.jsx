@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Provider from "./context/Provider";
+import Home from './components/Home/Home';
 
 function App() {
   const location = useLocation();
@@ -10,7 +11,7 @@ function App() {
 
   return (
     <Provider>
-      {!isHome && !isLogin && <Header />}
+      {!isLogin && <Header />}
       <Outlet />
     </Provider>
   );

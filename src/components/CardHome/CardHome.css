@@ -1,0 +1,68 @@
+.Card {
+    width: 15%; /* Reduzi a largura */
+    max-width: 200px; /* Reduzi o max-width */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 10px auto; /* Adicionei alguma margem para espaçamento */
+    position: relative;
+    border-radius: 12px; /* Ajustei o border-radius */
+    padding: 10px; /* Adicionei padding para melhorar o layout */
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+.link {
+    text-decoration: dotted;
+    color: currentColor;
+}
+
+.Card_image {
+    width: 100%;
+    border-radius: 12px; /* Ajustei o border-radius */
+}
+
+.card_info {
+    padding: 10px; /* Reduzi o padding */
+    border-top: 1px solid #ddd;
+}
+
+.card_price {
+    font-size: 20px; /* Reduzi o font-size */
+    font-weight: 400;
+    margin-bottom: 5px; /* Reduzi a margem */
+}
+
+.card_title {
+    font-size: 12px; /* Reduzi o font-size */
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.2; /* Ajustei o line-height */
+    font-weight: 500;
+}
+
+.card_button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px; /* Reduzi o tamanho do botão */
+    height: 35px; /* Reduzi o tamanho do botão */
+    margin: 8px 10px; /* Ajustei a margem */
+    color: #0c55d6;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem; /* Reduzi o font-size */
+    cursor: pointer;
+}
+
+.Card:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Card:hover .card_button {   
+    display: flex;
+}

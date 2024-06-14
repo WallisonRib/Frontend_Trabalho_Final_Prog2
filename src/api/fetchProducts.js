@@ -1,7 +1,7 @@
 const fetchProducts = async (query) => {
   try {
     const url = `https://backend-trabalho-final-bd.vercel.app/api/livros/search?query=${query}`;
-    console.log('Fetching from:', url); // Verifica a URL usada para a solicitação
+    console.log('Fetching from:', url); 
     const response = await fetch(url);
     
     if (!response.ok) {
@@ -9,7 +9,7 @@ const fetchProducts = async (query) => {
     }
     
     const data = await response.json();
-    console.log('Response data:', data); // Verifica toda a resposta JSON recebida
+    console.log('Response data:', data); 
     
     return data.rows;
   } catch (error) {

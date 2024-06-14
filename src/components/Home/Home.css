@@ -1,67 +1,115 @@
-/* Home.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+.wrap {
+  padding: 120px;
+  display: flex;
+  flex-direction: row;
+}
 
 .home-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #131543;
-    color: white;
-    flex-direction: column;
-    
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 
 .home-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.logoHome {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    height: auto;
+.carrosel {
+  padding: 10px;
+  background-color: #131543;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
 }
 
-.logoHome img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+.produtos {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  /* Ajusta dinamicamente */
+  gap: 20px;
 }
+
+/* Media query para telas menores */
+
+
 .slogan {
-    text-align: center; /* Centraliza o texto */
-    font-family: 'Roboto', sans-serif; /* Altere a fonte conforme necessário */
-    font-size: 1.2em; /* Ajuste o tamanho da fonte conforme necessário */
-    color: #FFFF; /* Cor do texto */
-    margin: 20px auto; /* Espaçamento externo */
-    max-width: 600px; /* Largura máxima do contêiner */
-  }
-  
-  .slogan p {
-    margin: 0; 
-    line-height: 1.0; 
-    padding: 10px 0; 
-  }
-  
-.btn_login {
-    margin: 20px;
-    width: 300px;
-    padding: 0.75rem;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-  }
+  text-align: center;
+  /* Centraliza o texto */
+  font-family: 'Roboto', sans-serif;
+  /* Altere a fonte conforme necessário */
+  font-size: 1.2em;
+  /* Ajuste o tamanho da fonte conforme necessário */
+  color: #FFFF;
+  /* Cor do texto */
+  margin: 20px auto;
+  /* Espaçamento externo */
+  max-width: 600px;
+  /* Largura máxima do contêiner */
+}
+
+.slogan p {
+  margin: 0;
+  line-height: 1.0;
+  padding: 10px 0;
+}
+
+.wrap-textos {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.wrap-textos>h1 {
+  font-size: 24px;
+}
+
+.wrap-textos>p {
+  text-align: center;
+}
+
+.FiltrarGeneros {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
+  /* Caso a largura dos elementos ultrapasse a largura da seção */
+  white-space: nowrap;
+  /* Evita que os elementos quebrem para uma nova linha */
+  -webkit-overflow-scrolling: touch;
+  /* Melhora a rolagem no iOS */
+}
+
+.genero {
+  color: white;
+  background-color: #131543;
+  /* Fundo branco para cada item */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Sombra para destacar os itens */
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+.genero p {
+  margin: 0;
+  text-align: center;
+}
+
+.titulo_genero>h1 {
+  font-size: 24px;
+  padding: 20px;
+}

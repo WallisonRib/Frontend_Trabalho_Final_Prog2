@@ -3,6 +3,8 @@ import logo from '../../imgs/logo.png'
 
 import './Header.css';
 import { Link } from 'react-router-dom';
+import { LuLogIn } from "react-icons/lu";
+
 
 
 function Header() {
@@ -12,11 +14,17 @@ function Header() {
             <div class="container">
                 <Link to="/" >
                     <div class="logo">
-                        <img src={logo} alt="Logo"/>
+                        <img src={logo} alt="Logo" />
                     </div>
                 </Link>
 
                 <SearchBar />
+
+                <Link to={`/login`}>
+                <LuLogIn className='logo-login' color='white' size={30} />
+
+                </Link>
+
 
 
             </div>
