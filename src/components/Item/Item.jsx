@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from 'react';
 import fetchItem from "../../api/fetchItem";
-import "./Item.css"
+import "./Item.css";
 import Loading from "../Loading/Loading";
 import AppContext from '../../context/AppContext';
 
@@ -11,42 +11,56 @@ function Item() {
     const { carregando, setLoading } = useContext(AppContext);
 
     useEffect(() => {
+        setLoading(true);
         fetchItem(isbn).then((response) => {
-            setLoading(true);
             setItemData(response);
             setLoading(false);
         });
-    }, [isbn]);
+    }, [isbn, setLoading]);
 
-    while (itemData === null) {
-        return <Loading />
+    if (carregando) {
+        return <Loading />;
     }
 
-    const { nome, preco, title, descricao, autor, foto } = itemData;
+    if (!itemData) {
+        return <Loading />;
+    }
 
+    const { nome, preco, descricao, autor, editora, foto, linkmenorpreco } = itemData;
     return (
-        (carregando ? <Loading /> :
-            <div className="wrap">
-                <div className="container item">
+        <div className="wrap container">
+            <div className="container item top">
 
-                <img src={foto}
-                alt="product"
-                className='Card_image'
-            />
+                <div className="imagem">
+                    <img src={foto} className="slide-item" alt={nome} />
+                </div>
 
-                    <div className="item-description">
+                <div className="item-description">
 
-                        <h2>{nome}</h2>
-                        <div className="price">
-
-                            <h2 className="pricecurrency">{preco.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h2>
-                        </div>
-
+                    <h2>{nome}</h2>
+                    <div className="price">
+                        <h2 className="pricecurrency">R$ {preco}</h2>
                     </div>
+                    <a href={linkmenorpreco} target="blank">
+                        <input className="addcart"
+                            type="button"
+                            value="COMPRE COM O MENOR PREÇO"
+                        />
+                    </a>
 
                 </div>
+
+               
             </div>
-        )
+            <div className="descricao">
+                <p>Autor: {autor} </p>
+                <p>Editora: {editora} </p>
+                <br />
+
+                    {descricao}
+                </div>
+
+        </div>
     );
 }
 
