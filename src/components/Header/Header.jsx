@@ -14,18 +14,15 @@ function Header() {
             <div class="container">
                 <Link to="/" >
                     <div class="logo">
-                        <img src={logo} alt="Logo" />
+                        <img src={logo} className='logo-img' alt="Logo" />
                     </div>
                 </Link>
 
                 <SearchBar />
 
                 <Link to={`/login`}>
-                <LuLogIn className='logo-login' color='white' size={30} />
-
+                    <LuLogIn className='logo-login' color='white' size={30} />
                 </Link>
-
-
 
             </div>
         </header>
