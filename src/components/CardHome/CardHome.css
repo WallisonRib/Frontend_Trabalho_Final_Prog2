@@ -23,18 +23,18 @@
     border-radius: 12px; /* Ajustei o border-radius */
 }
 
-.card_info {
+.card_infohome {
     padding: 10px; /* Reduzi o padding */
     border-top: 1px solid #ddd;
 }
 
-.card_price {
-    font-size: 20px; /* Reduzi o font-size */
-    font-weight: 400;
+.card_pricehome {
     margin-bottom: 5px; /* Reduzi a margem */
+    font-size: 20px;
+    font-weight: 400;
 }
 
-.card_title {
+.card_titlehome {
     font-size: 12px; /* Reduzi o font-size */
     color: rgba(0, 0, 0, 0.5);
     line-height: 1.2; /* Ajustei o line-height */

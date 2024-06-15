@@ -19,11 +19,11 @@ function CardHome({ data, showLink = true }) {
                 className='Card_image'
             />
 
-            <div className="card_info">
-                <h2 className="card_price">R$ {preco.toLocaleString('pt-br', {
+            <div className="card_infohome">
+                <h2 className="card_pricehome">R$ {preco.toLocaleString('pt-br', {
                     style: 'currency',
                     currency: 'BRL'
-                })}</h2>                <h2 className="card_title">{nome}</h2>
+                })}</h2>                <h2 className="card_titlehome">{nome}</h2>
 
             </div>
             </Link>
