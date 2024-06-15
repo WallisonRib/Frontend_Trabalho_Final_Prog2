@@ -1,6 +1,6 @@
 /* Home.css */
 
-.login-container {
+.dash-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,49 +10,22 @@
 
   }
   
-  .login-box {
+  .dash-box {
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 2rem;
+    padding: 2rem 1rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
     width: 300px;
+
   }
   
-  .input-group {
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  .input-group input {
-    width: 100%;
+  .dash-box h1{
+    font-size: 24px;
+    text-align: center;
     padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
   }
-  
-  .submit {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .submit:hover {
-    background-color: #0056b3;
-  }
-  
-  form>p{
-    padding-top: 10px;
-    display: block;
-    font-size: 0.7rem;
+    
+  .dash-box h2{
+    padding: 0.5rem 2rem;
+    font-size: 18px;
   }

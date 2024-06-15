@@ -1,28 +1,63 @@
-import React from 'react';
-import './Login.css';
+import React, { useState, useContext, useEffect } from 'react';
+import './dashboard.css';
+import AppContext from '../../context/AppContext';
+import Loading from '../Loading/Loading';
+
+import fetchTotalbooks from '../../api/fetchTotalbooks';
+import fetchTotalfunc from '../../api/fetchTotalfunc';
+import fetchTotalEditora from '../../api/fetchTotalEditora';
+
+
 
 const Dashboard = () => {
-  return (
-    <div className="login-container">
-      <div className="login-box">
-        <h2>Login</h2>
-        <form>
-          <div className="input-group">
-            <label htmlFor="username">Username</label>
-            <input type="text" id="username" name="username" required />
-          </div>
-          <div className="input-group">
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" name="password" required />
-          </div>
-        
-          <button className='submit' type="submit">Login</button>
+  const { carregando, setLoading } = useContext(AppContext);
+  const [totalBooks, setTotalBooks] = useState(0);
+  const [totalFunc, setTotalFunc] = useState(0);
+  const [totalEditora, setTotalEditora] = useState(0);
 
-          <p>Problemas com o login? contate o <strong>suporte</strong></p>
-        </form>
-      </div>
-    </div>
+
+
+  const fetchBooks = async () => {
+    setLoading(true);
+    const fetchedTotalBooks = await fetchTotalbooks();
+    setTotalBooks(fetchedTotalBooks);
+    setLoading(false);
+  };
+  
+  const fetchFunc = async () => {
+    setLoading(true);
+    const fetchedTotalFunc = await fetchTotalfunc();
+    setTotalFunc(fetchedTotalFunc);
+    setLoading(false);
+  };
+
+  const fetchEditora = async () => {
+    setLoading(true);
+    const fetchedTotalEditora = await fetchTotalEditora();
+    setTotalEditora(fetchedTotalEditora);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchBooks();
+    fetchFunc();
+    fetchEditora();
+  }, []);
+
+  return (
+    (carregando ? <Loading /> :
+
+      <div className="dash-container">
+        <div className="dash-box">
+          <h1>Bem vindo, Visitante!</h1>
+          <h2>Total de livros: {totalBooks}</h2>
+          <h2>Total de funcionários: {totalFunc}</h2>
+          <h2>Total de Editora: {totalEditora}</h2>
+
+
+        </div>
+      </div>)
   );
-}
+};
 
 export default Dashboard;
