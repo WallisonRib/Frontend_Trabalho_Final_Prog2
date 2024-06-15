@@ -1,5 +1,4 @@
-.Card {
-    width: 15%; /* Reduzi a largura */
+.Card-home {
     max-width: 200px; /* Reduzi o max-width */
     background-color: white;
     display: flex;
@@ -10,7 +9,6 @@
     border-radius: 12px; /* Ajustei o border-radius */
     padding: 10px; /* Adicionei padding para melhorar o layout */
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-
 }
 
 .link {

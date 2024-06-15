@@ -49,7 +49,7 @@ const Home = () => {
 
     return (
         (carregando ? <Loading /> :
-            <div className="wrap">
+            <div className="wrap-home">
                 <div className="home-container container">
                     <div className="home-box">
                         <div className="carrosel">

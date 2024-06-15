@@ -10,7 +10,7 @@ function CardHome({ data, showLink = true }) {
 
     const { nome, foto, preco, autor } = data;
     return (
-        <section className="Card">
+        <section className="Card-home">
 
         <Link className='link' to={`/item/${data.isbn}`}>  
         
