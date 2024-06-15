@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import './dashboard.css';
+import './Dashboard.css';
 import AppContext from '../../context/AppContext';
 import Loading from '../Loading/Loading';
 
