@@ -17,7 +17,7 @@ function SearchBar() {
         setProducts(products);
         console.log(products);
         setLoading(false);
-        navigate(`/search?q=${searchValue}`, { replace: true });
+        navigate(`/search?q=${searchValue}`);
         setSearchValue('');
     };
     

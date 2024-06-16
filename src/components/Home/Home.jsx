@@ -38,7 +38,7 @@ const Home = () => {
         setProducts(products);
         console.log(products);
         setLoading(false);
-        navigate(`/search?q=${value}`, { replace: true });
+        navigate(`/search?q=${value}`);
         setSearchValue('');
     };
 
@@ -60,7 +60,6 @@ const Home = () => {
                         <div className="livros_destaque">
                             <div className="wrap-textos">
                                 <h1>Livros em destaque</h1>
-                                <p>ver todos</p>
                             </div>
                             <section className="produtos container">
                                 {
