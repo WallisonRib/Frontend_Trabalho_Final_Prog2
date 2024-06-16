@@ -10,15 +10,18 @@ function Card({ data, showLink = true }) {
 
     const { nome, foto, preco, autor } = data;
     return (
-        <section className="Card">
+        <section className="Card_search">
 
-        <Link className='link' to={`/item/${data.isbn}`}>  
+        <Link className='link_search' to={`/item/${data.isbn}`}>  
         
-            <img src={foto}
+        <div className="wrap_image_search">
+        <img src={foto}
                 alt="product"
-                className='Card_image'
+                className='Card_image_search'
             />
 
+        </div>
+            
             <div className="card_info">
                 <h2 className="card_price">R$ {preco.toLocaleString('pt-br', {
                     style: 'currency',

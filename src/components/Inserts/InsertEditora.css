@@ -1,0 +1,72 @@
+
+.Insert-editora {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #131543;
+    color: white;
+    background-color: #131543;
+    padding: 20px ; /* Adjusted padding for top and bottom */
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .Insert-box-editora {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Adjusted text alignment to left */
+    width: 100%; /* Adjusted width to take full width */
+    max-width: 600px; /* Added max-width for better responsiveness */
+    padding: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .submit {
+    padding: 10px 20px;
+    background-color: #4c93af;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .cancel {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #af4c4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  
+  .cancel-button:hover {
+    background-color: #777;
+  }
+  

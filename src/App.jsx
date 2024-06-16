@@ -7,10 +7,14 @@ function App() {
   const location = useLocation();
   const isDashboard = location.pathname === '/dashboard';
   const isLogin = location.pathname === '/login';
+  const isInsertLivro = location.pathname === '/dashboard/insertlivro';
+  const isInsertEditora = location.pathname === '/dashboard/inserteditora' ;
+  const isInsertAutor = location.pathname === '/dashboard/insertautor' ;
+  const isRelatorio = location.pathname === '/dashboard/relatorio' ;
 
   return (
     <Provider>
-      {!isLogin && !isDashboard && <Header />}
+      {!isLogin && !isDashboard && !isInsertLivro && !isInsertEditora && !isInsertAutor && !isRelatorio && <Header />}
       <Outlet />
     </Provider>
   );

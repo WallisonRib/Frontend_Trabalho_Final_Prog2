@@ -38,14 +38,13 @@ const Home = () => {
         setProducts(products);
         console.log(products);
         setLoading(false);
-        navigate(`/search?q=${value}`, { replace: true });
+        navigate(`/search?q=${value}`);
         setSearchValue('');
     };
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [products]);
-
 
     return (
         (carregando ? <Loading /> :
@@ -60,7 +59,6 @@ const Home = () => {
                         <div className="livros_destaque">
                             <div className="wrap-textos">
                                 <h1>Livros em destaque</h1>
-                                <p>ver todos</p>
                             </div>
                             <section className="produtos container">
                                 {

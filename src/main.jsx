@@ -20,6 +20,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Home from './components/Home/Home.jsx'
+import InsertLivro from './components/Inserts/InserLivro.jsx'
+import InsertEditora from './components/Inserts/InsertEditora.jsx'
+import InsertAutor from './components/Inserts/InsertAutor.jsx'
+import Relatorio from './components/Relatorio/Relatorio.jsx'
 
 
 
@@ -34,8 +38,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="item/:isbn" element={<Item />} />
           <Route path="search" element={<Search />} />
           <Route path="dashboard" element={<Dashboard />} />
-
-
+          <Route path="dashboard/insertlivro" element={<InsertLivro />} />
+          <Route path="dashboard/inserteditora" element={<InsertEditora />} />
+          <Route path="dashboard/insertautor" element={<InsertAutor />} />
+          <Route path="dashboard/relatorio" element={<Relatorio />} />
           
         </Route>
       </Routes>

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import './Dashboard.css';
+import './Relatorio.css';
 import AppContext from '../../context/AppContext';
 import Loading from '../Loading/Loading';
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ import fetchTotalbooks from '../../api/fetchTotalbooks';
 import fetchTotalfunc from '../../api/fetchTotalfunc';
 import fetchTotalEditora from '../../api/fetchTotalEditora';
 
-const Dashboard = () => {
+const Relatorio = () => {
   const { carregando, setLoading } = useContext(AppContext);
   const [totalBooks, setTotalBooks] = useState(0);
   const [totalFunc, setTotalFunc] = useState(0);
@@ -41,36 +41,25 @@ const Dashboard = () => {
       <div className="dash-container">
         <div className="dash-box">
           <h1>Bem vindo, Visitante!</h1>
-
-          <Link to='/dashboard/relatorio'>
-         <button className="submit1" type="button"><h2>Informações Relevantes</h2></button>
-         </Link>
-
-
-         <Link to='/dashboard/insertlivro'>
-         <button className="submit1" type="button"><h2>Inserindo Livros</h2></button>
-         </Link>
-
-             
-         <Link to='/dashboard/inserteditora'>
-         <button className="submit1" type="button"><h2>Inserindo Editora</h2></button>
-         </Link>
-
-    
-         <Link to='/dashboard/insertautor'>
-         <button className="submit1" type="button"><h2>Inserindo Autor</h2></button>
-         </Link>
-
-
-         <Link to="/">
-              <button className="cancelar" type="submit"><h2>Voltar para home
-                </h2>
+          <div className="info-box">
+            <h2>Total de livros</h2>
+            <p>{totalBooks}</p>
+          </div>
+          <div className="info-box">
+            <h2>Total de funcionários</h2>
+            <p>{totalFunc}</p>
+          </div>
+          <div className="info-box">
+            <h2>Total de Editoras</h2>
+            <p>{totalEditora}</p>
+          </div>
+          <Link to="/dashboard">
+              <button className="cancelar" type="submit"> <h2>Voltar</h2>
               </button>
             </Link>
-
         </div>
       </div>
   );
 };
 
-export default Dashboard;
+export default Relatorio;
