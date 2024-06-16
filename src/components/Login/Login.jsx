@@ -25,10 +25,7 @@ const Login = () => {
         </form>
       </div>
       <div className="login-box">
-        <Link to={`/dashboard`}>
         <button className='submit' type="submit">Entrar como visitante!</button>
-
-        </Link>
 
       </div>
 

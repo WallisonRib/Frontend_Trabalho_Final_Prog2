@@ -13,8 +13,7 @@
 }
 
 .search_input{
-    min-width: 50px;
-
+    min-width: 20px;
     padding: 13px;
     flex-grow: 1;
     border: none;
