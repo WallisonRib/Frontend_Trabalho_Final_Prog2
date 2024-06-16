@@ -14,7 +14,6 @@ function Search() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
         // Verifica se há produtos para exibir ou mostrar o texto de nenhum item encontrado
-        setExibindoNenhumItem(products.length === 0);
     }, [products]);
 
     return (

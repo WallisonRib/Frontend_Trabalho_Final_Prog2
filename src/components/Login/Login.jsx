@@ -24,10 +24,13 @@ const Login = () => {
           <p>Problemas com o login? contate o <strong>suporte</strong></p>
         </form>
       </div>
+      <Link to="/dashboard">
       <div className="login-box">
         <button className='submit' type="submit">Entrar como visitante!</button>
 
       </div>
+      </Link>
+      
 
     </div>
   );
