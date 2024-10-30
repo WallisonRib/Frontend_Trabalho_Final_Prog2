@@ -18,25 +18,23 @@
 
 }
 
+.p-review{
+    font-size: 16px;
+}
+
 
 .imagem>img {
     width: 100%;
 }
 
 .item-description {
-    padding: 20px;
+    gap: 20px;
+    padding: 40px;
     border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 8px;
     width: 100%;
 }
 
-.item-description>h2 {
-    padding: 20px;
-}
-
-.price {
-    padding: 20px;
-}
 
 .pricecurrency {
     font-size: 2rem;

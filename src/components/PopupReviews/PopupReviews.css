@@ -1,0 +1,43 @@
+/* Popup.css */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Assegure-se que o popup fique acima dos outros elementos */
+    overflow: auto; /* Permite rolar o conteúdo se ele for muito longo */
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh; /* Limita a altura do popup */
+    overflow-y: auto; /* Habilita o scroll vertical */
+}
+
+.close-button {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    float: right; /* Para colocar o botão de fechar no canto superior direito */
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.li-reviews {
+    list-style: none;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
