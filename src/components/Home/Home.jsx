@@ -18,7 +18,7 @@ const Home = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetchProducts('Atlético').then((response) => {
+        fetchProducts('Clube').then((response) => {
             setLoading(true);
             setProducts(response);
             setLoading(false);

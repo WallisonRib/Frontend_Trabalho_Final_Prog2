@@ -71,7 +71,6 @@ function Item() {
                         />
                     </div>
                     <h5>Uma média de {rating.toFixed(2)} com {reviews.length} reviews </h5>
-                   
                     <button onClick={() => setIsPopupOpen(true)} className="read-reviews-button">
                         Ler todos os reviews
                     </button>
