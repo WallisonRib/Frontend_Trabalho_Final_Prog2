@@ -1,4 +1,3 @@
-/* Popup.css */
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -9,18 +8,46 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Assegure-se que o popup fique acima dos outros elementos */
-    overflow: auto; /* Permite rolar o conteúdo se ele for muito longo */
+    z-index: 1000;
+    overflow: auto;
 }
 
 .popup-content {
     background: white;
     padding: 20px;
     border-radius: 5px;
-    max-width: 500px;
+    max-width: 80%;
     width: 100%;
-    max-height: 80vh; /* Limita a altura do popup */
-    overflow-y: auto; /* Habilita o scroll vertical */
+    max-height: 80vh;
+    /* Aumenta a altura máxima para melhor rolagem */
+    overflow: hidden;
+    /* Remove o overflow automático */
+}
+
+.wrap-reviews {
+    display: flex;
+    width: 100%;
+}
+
+.resumo-e-formulario {
+
+    width: 50%;
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    /* Permite rolar dentro do formulário se necessário */
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.avaliacoes {
+    width: 50%;
+    overflow-y: auto;
+    max-height: 100vh;
+    /* Limita a altura da seção das reviews */
+    padding-left: 20px;
 }
 
 .close-button {
@@ -28,7 +55,7 @@
     border: none;
     font-size: 16px;
     cursor: pointer;
-    float: right; /* Para colocar o botão de fechar no canto superior direito */
+    float: right;
 }
 
 h2 {
@@ -40,4 +67,81 @@ h2 {
     padding: 20px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
+}
+
+.review-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.form-title {
+    text-align: center;
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .wrap-reviews {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resumo-e-formulario,
+    .avaliacoes {
+        width: 80%;
+    }
 }

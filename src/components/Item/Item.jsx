@@ -70,17 +70,8 @@ function Item() {
                             starSpacing="15px"
                         />
                     </div>
-
-                    <h4>Reviews:</h4>
-                    {reviews.length > 0 ? (
-                        <ul>
-                            <li key={reviews[0].review_id}>
-                                <strong>{reviews[0].AutorReview}</strong> ({reviews[0].NotaReview}/5): {reviews[0].TextoReview}
-                            </li>
-                        </ul>
-                    ) : (
-                        <p>Nenhum review disponível.</p>
-                    )}
+                    <h5>Uma média de {rating} com {reviews.length} reviews </h5>
+                   
 
                     <button onClick={() => setIsPopupOpen(true)} className="read-reviews-button">
                         Ler todos os reviews
