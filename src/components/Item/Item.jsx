@@ -27,7 +27,7 @@ function Item() {
             console.log(reviewData);
 
             await FetchReviews(isbn, reviewData);
-            
+
             // Atualize o estado para incluir o novo review
             setItemData((prevData) => ({
                 ...prevData,
@@ -70,10 +70,21 @@ function Item() {
                             starSpacing="15px"
                         />
                     </div>
-                    <h5>Uma média de {rating.toFixed(2)} com {reviews.length} reviews </h5>
-                    <button onClick={() => setIsPopupOpen(true)} className="read-reviews-button">
-                        Ler todos os reviews
-                    </button>
+
+
+                    {nota_reviews ? (
+                        <>
+                            <h5>Uma média de {rating.toFixed(2)} com {reviews.length} reviews </h5>
+                            <button onClick={() => setIsPopupOpen(true)} className="read-reviews-button">
+                                Ler todos os reviews
+                            </button>
+                        </>
+                    ) : (
+                        <button onClick={() => setIsPopupOpen(true)} className="read-reviews-button">
+                                Faça o primeiro review!
+                            </button>
+                    )}
+
 
                     <div className="price">
                         <h2 className="pricecurrency">R$ {preco}</h2>
@@ -92,9 +103,9 @@ function Item() {
             </div>
 
             {isPopupOpen && (
-                <PopupReview 
-                    reviews={reviews} 
-                    onClose={() => setIsPopupOpen(false)} 
+                <PopupReview
+                    reviews={reviews}
+                    onClose={() => setIsPopupOpen(false)}
                     onSubmitReview={handleReviewSubmit} // Passa a função de envio do review
                 />
             )}
