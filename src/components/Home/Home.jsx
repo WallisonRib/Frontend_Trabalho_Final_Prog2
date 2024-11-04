@@ -9,6 +9,7 @@ import { fetchGenres } from '../../api/fetchGenres'; // Importe a função fetch
 import AppContext from '../../context/AppContext';
 import CardHome from '../CardHome/CardHome';
 import Loading from '../Loading/Loading';
+import Podio from '../Podio/Podio'; // Importe o Podio
 
 const Home = () => {
     const navigate = useNavigate(); // Para navegação
@@ -46,6 +47,13 @@ const Home = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [products]);
 
+    // Dados simulados para o pódio (você pode ajustar isso para carregar dinamicamente os dados)
+    const topBooks = [
+        { name: 'Livro 1' },
+        { name: 'Livro 2' },
+        { name: 'Livro 3' }
+    ];
+
     return (
         (carregando ? <Loading /> :
             <div className="wrap-home">
@@ -55,6 +63,10 @@ const Home = () => {
                             <div className="slogan">
                                 <p>"Descubra um universo onde a qualidade literária encontra a acessibilidade"</p>
                             </div>
+                        </div>
+                        <div className="ranking-livros">
+                            <h1>Ranking de Livros</h1>
+                            <Podio positions={topBooks} /> {/* Renderizando o componente Podio */}
                         </div>
                         <div className="livros_destaque">
                             <div className="wrap-textos">
