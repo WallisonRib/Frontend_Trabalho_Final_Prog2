@@ -14,13 +14,12 @@ import Podio from '../Podio/Podio';
 
 const Home = () => {
     const navigate = useNavigate();
-    const { products, setProducts, setLoading, carregando } = useContext(AppContext);
+    const { products, setProducts, setLoading, carregando, refreshTop3 } = useContext(AppContext);
     const [genres, setGenres] = useState([]);
     const [top3, setTop3] = useState([]);
-    const [searchValue, setSearchValue] = useState(''); 
+    const [searchValue, setSearchValue] = useState('');
 
     useEffect(() => {
-        // Carrega os produtos e define o estado de carregamento
         const loadProducts = async () => {
             setLoading(true);
             try {
@@ -33,7 +32,6 @@ const Home = () => {
             }
         };
 
-        // Carrega os top 3 livros para o ranking
         const loadTop3 = async () => {
             setLoading(true);
             try {
@@ -46,7 +44,6 @@ const Home = () => {
             }
         };
 
-        // Carrega os gêneros
         const loadGenres = async () => {
             try {
                 const genresData = await fetchGenres();
@@ -61,6 +58,13 @@ const Home = () => {
         loadGenres();
     }, [setLoading, setProducts]);
 
+    // Refetch top 3 whenever refreshTop3 changes
+    useEffect(() => {
+        if (refreshTop3) {
+            loadTop3();
+        }
+    }, [refreshTop3]);
+
     const handleSearch = async (value) => {
         setLoading(true);
         try {
@@ -74,6 +78,7 @@ const Home = () => {
             setLoading(false);
         }
     };
+
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [products]);
@@ -89,9 +94,14 @@ const Home = () => {
                             </div>
                         </div>
                         <div className="ranking-livros">
-                            <h1>Ranking de Livros</h1>
+                            <div className="wrap-textos">
+                                <h1>Ranking de Livros</h1>
+                                <br /><br /><br />
+                            </div>                            
+                            
                             <Podio positions={top3} />
-                            </div>
+
+                        </div>
                         <div className="livros_destaque">
                             <div className="wrap-textos">
                                 <h1>Livros em destaque</h1>

@@ -30,15 +30,15 @@
 }
 
 .posicao-1 {
-  height: 150px;
+  height: 170px;
 }
 
 .posicao-2 {
-  height: 120px;
+  height: 140px;
 }
 
 .posicao-3 {
-  height: 90px;
+  height: 110 px;
 }
 
 .lugar {
@@ -49,6 +49,7 @@
   font-size: 1.2em;
   font-weight: bold;
 }
+
 
 @keyframes crescer {
   0% {
