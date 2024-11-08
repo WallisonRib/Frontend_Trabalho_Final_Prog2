@@ -5,57 +5,81 @@ import logo from '../../imgs/logo.png';
 import SearchBar from '../SearchBar/SearchBar';
 import { BsSearch } from 'react-icons/bs';
 import fetchProducts from '../../api/fetchProducts';
-import { fetchGenres } from '../../api/fetchGenres'; // Importe a função fetchGenres
+import fetchTop3 from '../../api/fetchTop3';
+import { fetchGenres } from '../../api/fetchGenres';
 import AppContext from '../../context/AppContext';
 import CardHome from '../CardHome/CardHome';
 import Loading from '../Loading/Loading';
-import Podio from '../Podio/Podio'; // Importe o Podio
+import Podio from '../Podio/Podio';
 
 const Home = () => {
-    const navigate = useNavigate(); // Para navegação
+    const navigate = useNavigate();
     const { products, setProducts, setLoading, carregando } = useContext(AppContext);
     const [genres, setGenres] = useState([]);
-    const [searchValue, setSearchValue] = useState(''); // Estado para o valor de busca
+    const [top3, setTop3] = useState([]);
+    const [searchValue, setSearchValue] = useState(''); 
 
     useEffect(() => {
-        setLoading(true);
-        fetchProducts('Clube').then((response) => {
+        // Carrega os produtos e define o estado de carregamento
+        const loadProducts = async () => {
             setLoading(true);
-            setProducts(response);
-            setLoading(false);
-        });
+            try {
+                const response = await fetchProducts('Clube');
+                setProducts(response);
+            } catch (error) {
+                console.error('Erro ao buscar produtos:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-        // Busca dos gêneros
-        fetchGenres().then((genresData) => {
-            setGenres(genresData);
-        }).catch((error) => {
-            console.error('Erro ao buscar gêneros:', error);
-        });
-    }, []);
+        // Carrega os top 3 livros para o ranking
+        const loadTop3 = async () => {
+            setLoading(true);
+            try {
+                const response = await fetchTop3();
+                setTop3(response);
+            } catch (error) {
+                console.error('Erro ao buscar top 3:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    const handleSearch = async (value) => { // Recebe o valor de busca como argumento
+        // Carrega os gêneros
+        const loadGenres = async () => {
+            try {
+                const genresData = await fetchGenres();
+                setGenres(genresData);
+            } catch (error) {
+                console.error('Erro ao buscar gêneros:', error);
+            }
+        };
+
+        loadProducts();
+        loadTop3();
+        loadGenres();
+    }, [setLoading, setProducts]);
+
+    const handleSearch = async (value) => {
         setLoading(true);
-        const products = await fetchProducts(value);
-        setProducts(products);
-        console.log(products);
-        setLoading(false);
-        navigate(`/search?q=${value}`);
-        setSearchValue('');
+        try {
+            const response = await fetchProducts(value);
+            setProducts(response);
+            navigate(`/search?q=${value}`);
+            setSearchValue('');
+        } catch (error) {
+            console.error('Erro ao buscar produtos:', error);
+        } finally {
+            setLoading(false);
+        }
     };
-
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [products]);
 
-    // Dados simulados para o pódio (você pode ajustar isso para carregar dinamicamente os dados)
-    const topBooks = [
-        { name: 'Livro 1' },
-        { name: 'Livro 2' },
-        { name: 'Livro 3' }
-    ];
-
     return (
-        (carregando ? <Loading /> :
+        carregando ? <Loading /> : (
             <div className="wrap-home">
                 <div className="home-container container">
                     <div className="home-box">
@@ -66,8 +90,8 @@ const Home = () => {
                         </div>
                         <div className="ranking-livros">
                             <h1>Ranking de Livros</h1>
-                            <Podio positions={topBooks} /> {/* Renderizando o componente Podio */}
-                        </div>
+                            <Podio positions={top3} />
+                            </div>
                         <div className="livros_destaque">
                             <div className="wrap-textos">
                                 <h1>Livros em destaque</h1>
@@ -96,7 +120,6 @@ const Home = () => {
             </div>
         )
     );
-
 }
 
 export default Home;

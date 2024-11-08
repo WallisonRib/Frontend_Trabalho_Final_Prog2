@@ -1,14 +1,25 @@
 import React from 'react';
-import './Podio.css'; // Arquivo de estilos
+import './Podio.css';
+import CardHome from '../CardHome/CardHome';
 
-const Podio = ({ positions }) => {
+const Podio = ({ positions = [] }) => {
+  console.log(positions[0]);
   return (
     <div className="podio-container">
-      {positions.map((position, index) => (
-        <div key={index} className={`posicao posicao-${index + 1}`}>
-          <div className="nome">{position.name}</div>
-          <div className="lugar">{index + 1}º</div>
+      {positions.map((book, index) => (
+
+
+        <div key={book.isbn || index} className={`posicao posicao-${index + 1}`}>
+          <div>
+            <img className="foto-podio" src={positions[index].foto} alt="" />
+
+
+
+          </div>
+
+          <div className="lugar">{index + 1}º Lugar</div>
         </div>
+
       ))}
     </div>
   );
