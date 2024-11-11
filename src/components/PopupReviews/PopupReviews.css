@@ -16,8 +16,7 @@
     background: white;
     padding: 20px;
     border-radius: 5px;
-    max-width: 80%;
-    width: 100%;
+    width: 80%;
     max-height: 80vh;
     /* Aumenta a altura máxima para melhor rolagem */
     overflow: hidden;
@@ -142,6 +141,9 @@ h2 {
 
     .resumo-e-formulario,
     .avaliacoes {
-        width: 80%;
+        width: 100%;
     }
+    .popup-content {
+        width: 95%;
+}
 }

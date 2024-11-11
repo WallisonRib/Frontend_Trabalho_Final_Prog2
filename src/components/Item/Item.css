@@ -83,16 +83,22 @@
 
 
 }
-.read-reviews-button{
-    padding: 30px;
+
+.read-reviews-button {
+    padding: 15px 30px; /* Ajustado para proporção */
     border: none;
     background-color: rgb(2, 2, 78);
     color: white;
     margin-top: 10px;
-    border-radius: 20px;
+    border-radius: 10px; /* Bordas mais arredondadas */
     cursor: pointer;
     font-weight: 600;
+    font-size: 16px; /* Tamanho da fonte ajustado */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Transições suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-bottom: 20px;
 }
+
 
 .read-reviews-button:hover{
     background-color: rgb(3, 3, 136);

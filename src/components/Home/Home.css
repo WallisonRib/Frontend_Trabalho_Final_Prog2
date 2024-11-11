@@ -65,8 +65,8 @@
 
 .wrap-textos {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
+  padding: 40px;
+  justify-content: center;
 }
 
 .wrap-textos>h1 {

@@ -24,7 +24,9 @@ const PopupReviews = ({ reviews, onClose, onSubmitReview }) => {
     return (
         <div className="popup-overlay">
             <div className="popup-content">
-                <button onClick={onClose} className="close-button">Fechar</button>
+                <button onClick={onClose} className="close-button">
+                    <strong>Fechar</strong>
+                </button>
                 <div className="wrap-reviews">
                     <div className="resumo-e-formulario">
                         <h3 className="form-title">Enviar um Review</h3>
